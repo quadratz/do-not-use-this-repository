@@ -1,7 +1,7 @@
 {
 	"name": "@qz/do-not-use-this-package",
-	"version": "0.0.0-alpha.250712.3",
-	"exports": "./src/mod.ts",
+	"version": "0.0.0-alpha.2507131655",
+	"exports": "./src/index.ts",
 	"publish": {
 		"include": [
 			"src/**/*.ts",
