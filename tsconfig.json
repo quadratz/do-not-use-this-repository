@@ -13,6 +13,6 @@
 		"forceConsistentCasingInFileNames": true,
 		"newLine": "lf",
 		"allowImportingTsExtensions": true,
-		"outDir": "npm",
+		"outDir": "npm"
 	}
 }
