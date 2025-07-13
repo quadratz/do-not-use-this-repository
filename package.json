@@ -45,9 +45,7 @@
 		"fix": "biome check --fix",
 		"build": "tsc -p .",
 		"publish:npm": "npm publish --provenance --access public",
-		"publish:npm:dry-run": "pnpm publish --dry-run --provenance --access public --no-git-checks",
-		"publish:jsr": "deno publish",
-		"publish:jsr:dry-run": "deno publish --dry-run --allow-dirty"
+		"publish:jsr": "deno install && deno publish"
 	},
 	"dependencies": {
 		"@types/unist": "^3.0.3"
