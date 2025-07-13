@@ -1,46 +1,59 @@
 {
-  "name": "tgast",
-  "description": "Telegram Abstract Syntax Tree format.",
-  "version": "1.2.5",
-  "license": "MIT",
-  "keywords": [
-    "telegram",
-    "bot",
-    "api",
-    "entity",
-    "entities",
-    "ast",
-    "syntax",
-    "tree",
-    "unified",
-    "unifiedjs",
-    "unified.js",
-    "unist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/quadratz/tgast.git"
-  },
-  "bugs": {
-    "url": "https://github.com/quadratz/tgast/issues"
-  },
-  "homepage": "https://github.com/quadratz/tgast",
-  "files": [
-    "src/**/*.d.ts",
-    "src/mod.js",
-    "CHANGELOG.md",
-    "package.json",
-    "LICENSE",
-    "README.md"
-  ],
-  "main": "src/mod.js",
-  "types": "src/mod.d.ts",
-  "dependencies": {
-    "@types/unist": "^3.0.3"
-  },
-  "author": {
-    "name": "Quadratz",
-    "email": "quadratz@proton.me",
-    "url": "https://t.me/quadratz"
-  }
+	"name": "@quadratz/do-not-use-this-package",
+	"description": "Telegram Abstract Syntax Tree format.",
+	"version": "0.0.0-alpha.2507131553",
+	"license": "MIT",
+	"main": "npm/index.js",
+	"types": "npm/index.d.ts",
+	"homepage": "https://github.com/quadratz/tgast",
+	"keywords": [
+		"telegram",
+		"bot",
+		"api",
+		"entity",
+		"entities",
+		"ast",
+		"syntax",
+		"tree",
+		"unified",
+		"unifiedjs",
+		"unified.js",
+		"unist"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/quadratz/tgast.git"
+	},
+	"bugs": {
+		"url": "https://github.com/quadratz/tgast/issues"
+	},
+	"files": [
+		"npm/**/*.d.ts",
+		"npm/mod.js",
+		"CHANGELOG.md",
+		"package.json",
+		"LICENSE",
+		"README.md"
+	],
+	"author": {
+		"name": "Quadratz",
+		"email": "quadratz@proton.me",
+		"url": "https://t.me/quadratz"
+	},
+	"scripts": {
+		"check": "biome check",
+		"fix": "biome check --fix",
+		"build": "tsc -p .",
+		"publish:npm": "npm publish --provenance --access public",
+		"publish:npm:dry-run": "pnpm publish --dry-run --provenance --access public --no-git-checks",
+		"publish:jsr": "deno publish",
+		"publish:jsr:dry-run": "deno publish --dry-run --allow-dirty"
+	},
+	"dependencies": {
+		"@types/unist": "^3.0.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.1.1",
+		"typescript": "^5.8.3"
+	}
 }

@@ -1,17 +1,18 @@
 {
-  "include": ["src/**/*.ts"],
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noEmitOnError": true,
-    "skipLibCheck": true, // speed
-    "strict": true,
-    "target": "ES2020",
-    "emitDeclarationOnly": true,
-    "forceConsistentCasingInFileNames": true,
-    "newLine": "lf",
-    "allowImportingTsExtensions": true
-  }
+	"include": ["src/**/*.ts"],
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"declaration": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"noEmitOnError": true,
+		"skipLibCheck": true, // speed
+		"strict": true,
+		"target": "ES2020",
+		"emitDeclarationOnly": true,
+		"forceConsistentCasingInFileNames": true,
+		"newLine": "lf",
+		"allowImportingTsExtensions": true,
+		"outDir": "npm",
+	}
 }

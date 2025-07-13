@@ -6,8 +6,8 @@
 
 **tgast** provides a way to represent
 [Telegram message entities][telegram-message-entity] as a structured format
-called an **[Abstract Syntax Tree (AST)][abstract-syntax-tree]**. It's built
-using the **[unist][github-unist]** specification, making it easy to work with
+called an [Abstract Syntax Tree (AST)][abstract-syntax-tree]. It's built
+using the [unist][github-unist] specification, making it easy to work with
 and extend.
 
 For released versions, see [releases][github-tgast-releases].
@@ -44,22 +44,24 @@ jsr or npm:
 
 ```sh
 # deno
-deno add -D jsr:@qz/tgast
+deno add -D npm:@quadratz/tgast # npm
+deno add -D jsr:@qz/tgast       # jsr
 
 # bun
-bunx jsr add -D @qz/tgast
+bun add -D @quadratz/tgast # npm
+bunx jsr add -D @qz/tgast  # jsr
 
 # pnpm
-pnpm dlx jsr add -D @qz/tgast
+pnpm add -D @quadratz/tgast   # npm
+pnpm dlx jsr add -D @qz/tgast # jsr
 
 # yarn
-yarn dlx jsr add -D @qz/tgast
-
-# npm jsr
-npx jsr add -D @qz/tgast
+yarn add -D @quadratz/tgast   # npm
+yarn dlx jsr add -D @qz/tgast # jsr
 
 # npm
-npm add -D tgast
+npm add -D tgast         # npm
+npx jsr add -D @qz/tgast # jsr
 ```
 
 ## Nodes

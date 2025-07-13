@@ -1,4 +1,4 @@
-import type { Blockquote, Pre } from "./mod.ts";
+import type { Blockquote, Pre } from "./index.ts";
 
 /**
  * Type for any tgast node that is block content.
@@ -17,6 +17,6 @@ export type BlockContent = BlockContentMap[keyof BlockContentMap];
  * For a combined type of all block content nodes, see {@linkcode RootContent}.
  */
 export interface BlockContentMap {
-  blockquote: Blockquote;
-  pre: Pre;
+	blockquote: Blockquote;
+	pre: Pre;
 }

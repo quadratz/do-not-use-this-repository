@@ -1,29 +1,18 @@
 {
-  "name": "@qz/tgast",
-  "version": "1.2.5",
-  "exports": "./src/mod.ts",
-  "tasks": {
-    "check": "deno fmt --check && deno lint && deno -ERW=. npm:typescript/tsc",
-    "check:publish": "deno task check && deno publish --dry-run --allow-dirty && npm publish --provenance --access public --dry-run --allow-dirty",
-    "liftoff": "deno task check && deno publish && npm publish --provenance --access public"
-  },
-  "publish": {
-    "include": [
-      "src/mod.js",
-      "src/**/*.ts",
-      "CHANGELOG.md",
-      "deno.json",
-      "LICENSE",
-      "README.md"
-    ],
-    "exclude": ["src/**/*.d.ts"]
-  },
-  "exclude": ["src/**/*.d.ts"],
-  "imports": {
-    "unist": "npm:@types/unist@^3.0.3"
-  },
-  "nodeModulesDir": "auto",
-  "lock": {
-    "frozen": true
-  }
+	"name": "@qz/do-not-use-this-package",
+	"version": "0.0.0-alpha.250712.3",
+	"exports": "./src/mod.ts",
+	"publish": {
+		"include": [
+			"src/**/*.ts",
+			"CHANGELOG.md",
+			"deno.json",
+			"LICENSE",
+			"README.md"
+		]
+	},
+	"imports": {
+		"unist": "npm:@types/unist@^3.0.3"
+	},
+	"lock": false
 }
