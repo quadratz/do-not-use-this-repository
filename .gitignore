@@ -4,8 +4,9 @@ node_modules
 # output
 out
 dist
-npm
 *.tgz
+npm/**/*
+!npm/index.js
 
 # code coverage
 coverage
@@ -36,4 +37,3 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 tmp/
 build/
-!npm/index.js
