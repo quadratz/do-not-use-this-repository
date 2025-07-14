@@ -53,7 +53,7 @@ jobs:
 
       - name: Extract version and changelog content
         id: changelog
-        run: node srcipts/extract-changelog.ts
+        run: node scripts/extract-changelog.ts
 
       - name: Get package name
         id: package
