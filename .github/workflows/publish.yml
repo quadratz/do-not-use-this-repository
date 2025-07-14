@@ -32,6 +32,9 @@ name: Publish
 
 on:
   workflow_dispatch:
+  push:
+    tags:
+      - "v*.*.*"
 
 jobs:
   publish:
@@ -87,15 +90,10 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Create GitHub Tag
-        run: |
-          git tag v${{ steps.changelog.outputs.VERSION }}
-          git push origin v${{ steps.changelog.outputs.VERSION }}
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ steps.changelog.outputs.VERSION }}
+          # tag_name: v${{ steps.changelog.outputs.VERSION }}
           name: v${{ steps.changelog.outputs.VERSION }}
           body: ${{ steps.changelog.outputs.CONTENT }}
           prerelease: ${{ steps.changelog.outputs.IS_PRERELEASE }}

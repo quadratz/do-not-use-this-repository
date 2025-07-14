@@ -1,6 +1,6 @@
 {
 	"name": "@qz/do-not-use-this-package",
-	"version": "25.7.14-2328",
+	"version": "25.7.14-2349",
 	"exports": "./src/index.ts",
 	"publish": {
 		"include": [
