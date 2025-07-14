@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"main": "npm/index.js",
 	"types": "npm/index.d.ts",
-	"homepage": "https://github.com/quadratz/tgast",
+	"homepage": "https://github.com/quadratz/do-not-use-this-repository",
 	"keywords": [
 		"telegram",
 		"bot",
@@ -22,10 +22,10 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/quadratz/tgast.git"
+		"url": "git+https://github.com/quadratz/do-not-use-this-repository.git"
 	},
 	"bugs": {
-		"url": "https://github.com/quadratz/tgast/issues"
+		"url": "https://github.com/quadratz/do-not-use-this-repository/issues"
 	},
 	"files": [
 		"npm/**/*.d.ts",
