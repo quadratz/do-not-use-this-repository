@@ -40,6 +40,7 @@
 		"email": "quadratz@proton.me",
 		"url": "https://t.me/quadratz"
 	},
+	"type": "module",
 	"scripts": {
 		"check": "biome check",
 		"fix": "biome check --fix",
