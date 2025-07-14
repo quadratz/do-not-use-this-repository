@@ -47,6 +47,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24.x
+          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
         run: npm install
@@ -71,9 +72,9 @@ jobs:
       - name: Publish to npm
         run: |
           if [ "${{ steps.changelog.outputs.IS_PRERELEASE }}" == "true" ]; then
-            npm publish --tag next
+            npm run publish:npm --tag next
           else
-            npm publish
+            npm run publish:npm
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
