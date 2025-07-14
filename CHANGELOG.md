@@ -12,7 +12,7 @@ and this project adheres to
 
 - `deno.lock` and `package-lock.json` from publish files
 
-## [25.7.14-0716] - 2025-07-14
+## [25.7.14-716] - 2025-07-14
 
 ### Changed
 
@@ -101,7 +101,7 @@ and this project adheres to
 - Initial release.
 
 [unreleased]: https://github.com/quadratz/tgast/compare/v1.2.4...HEAD
-[25.7.14-0716]: https://github.com/quadratz/tgast/compare/v1.2.5..v25.7.14-0716
+[25.7.14-716]: https://github.com/quadratz/tgast/compare/v1.2.5..v25.7.14-716
 [1.2.5]: https://github.com/quadratz/tgast/compare/v1.2.4...v1.2.5
 [1.2.4]: https://github.com/quadratz/tgast/compare/v1.2.3...v1.2.4
 [1.2.3]: https://github.com/quadratz/tgast/compare/v1.2.2...v1.2.3
