@@ -3,7 +3,7 @@
 
 import type { Data, Literal, Parent } from "./abstract.type.ts";
 import type { User } from "./message.type.ts";
-import type { PhrasingContent } from "./phrasing_content.type.ts";
+import type { PhrasingContent } from "./phrasing-content.type.ts";
 
 /**
  * Telegram block quotation entity.

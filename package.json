@@ -1,7 +1,7 @@
 {
 	"name": "@quadratz/do-not-use-this-package",
 	"description": "Telegram Abstract Syntax Tree format.",
-	"version": "25.7.13-1655",
+	"version": "25.7.14-0716",
 	"license": "MIT",
 	"main": "npm/index.js",
 	"types": "npm/index.d.ts",
@@ -52,6 +52,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.1.1",
+		"@types/node": "^24.0.13",
 		"typescript": "^5.8.3"
 	}
 }

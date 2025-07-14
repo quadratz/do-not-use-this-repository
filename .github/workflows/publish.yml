@@ -1,30 +1,102 @@
-name: Publish to npm
+# name: Publish to npm
+# on:
+#   release:
+#     types: [published]
+# jobs:
+#   publish-to-npm:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: read
+#       id-token: write
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: 24.x
+#           registry-url: https://registry.npmjs.org
+#       - run: npm run publish:npm
+#         env:
+#           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+#   publish-to-jsr:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: read
+#       id-token: write
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: denoland/setup-deno@v2
+#         with:
+#           deno-version: v2.x
+#       - run: deno task publish:jsr
+name: Publish
+
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
+
 jobs:
-  publish-to-npm:
+  publish:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 24.x
-          registry-url: https://registry.npmjs.org
-      - run: npm run publish:npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Extract version and changelog content
+        id: changelog
+        run: node srcipts/extract-changelog.ts
+
+      - name: Get package name
+        id: package
+        run: echo "PACKAGE_NAME=$(jq -r .name package.json)" >> $GITHUB_OUTPUT
+
+      - name: Determine if pre-release
+        id: prerelease
+        run: |
+          if [[ "${{ steps.changelog.outputs.version }}" == *-* ]]; then
+            echo "IS_PRERELEASE=true" >> $GITHUB_OUTPUT
+          else
+            echo "IS_PRERELEASE=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish to npm
+        run: |
+          if [ "${{ steps.prerelease.outputs.IS_PRERELEASE }}" == "true" ]; then
+            npm publish --tag next
+          else
+            npm publish
+          fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  publish-to-jsr:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: denoland/setup-deno@v2
+
+      - name: Publish to JSR
+        run: npx jsr publish
+
+      - name: Set newest tag
+        run: npm dist-tag add ${{ steps.package.outputs.PACKAGE_NAME }}@${{ steps.changelog.outputs.version }} newest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub Tag
+        run: |
+          git tag v${{ steps.changelog.outputs.version }}
+          git push origin v${{ steps.changelog.outputs.version }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
         with:
-          deno-version: v2.x
-      - run: deno task publish:jsr
+          tag_name: v${{ steps.changelog.outputs.version }}
+          name: v${{ steps.changelog.outputs.version }}
+          body: ${{ steps.changelog.outputs.content }}
+          prerelease: ${{ steps.prerelease.outputs.IS_PRERELEASE }}
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
