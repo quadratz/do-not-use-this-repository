@@ -1,7 +1,7 @@
 {
 	"name": "@quadratz/do-not-use-this-package",
 	"description": "Telegram Abstract Syntax Tree format.",
-	"version": "25.7.14-2321",
+	"version": "25.7.14-2328",
 	"license": "MIT",
 	"main": "npm/index.js",
 	"types": "npm/index.d.ts",
@@ -46,7 +46,7 @@
 		"fix": "biome check --fix",
 		"build": "tsc -p ./src",
 		"publish:npm": "npm publish --provenance --access public",
-		"publish:jsr": "deno install && deno publish --allow-dirty"
+		"publish:jsr": "npx jsr publish --allow-dirty"
 	},
 	"dependencies": {
 		"@types/unist": "^3.0.3"
@@ -56,8 +56,6 @@
 		"@types/mdast": "^4.0.4",
 		"@types/node": "^24.0.13",
 		"mdast-util-from-markdown": "^2.0.2",
-		"mdast-util-newline-to-break": "^2.0.0",
-		"mdast-util-to-markdown": "^2.1.2",
 		"typescript": "^5.8.3",
 		"unist-util-visit": "^5.0.0"
 	}

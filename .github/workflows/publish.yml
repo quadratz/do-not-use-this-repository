@@ -80,7 +80,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish to JSR
-        run: npx jsr publish
+        run: npm run publish:jsr
 
       - name: Set newest tag
         run: npm dist-tag add ${{ steps.package.outputs.PACKAGE_NAME }}@${{ steps.changelog.outputs.VERSION }} newest
