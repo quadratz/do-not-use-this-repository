@@ -1,7 +1,7 @@
 {
 	"name": "@quadratz/do-not-use-this-package",
 	"description": "Telegram Abstract Syntax Tree format.",
-	"version": "25.7.14-2349",
+	"version": "25.7.15-2",
 	"license": "MIT",
 	"main": "npm/index.js",
 	"types": "npm/index.d.ts",

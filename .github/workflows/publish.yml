@@ -1,33 +1,3 @@
-# name: Publish to npm
-# on:
-#   release:
-#     types: [published]
-# jobs:
-#   publish-to-npm:
-#     runs-on: ubuntu-latest
-#     permissions:
-#       contents: read
-#       id-token: write
-#     steps:
-#       - uses: actions/checkout@v4
-#       - uses: actions/setup-node@v4
-#         with:
-#           node-version: 24.x
-#           registry-url: https://registry.npmjs.org
-#       - run: npm run publish:npm
-#         env:
-#           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-#   publish-to-jsr:
-#     runs-on: ubuntu-latest
-#     permissions:
-#       contents: read
-#       id-token: write
-#     steps:
-#       - uses: actions/checkout@v4
-#       - uses: denoland/setup-deno@v2
-#         with:
-#           deno-version: v2.x
-#       - run: deno task publish:jsr
 name: Publish
 
 on:
@@ -62,15 +32,6 @@ jobs:
       - name: Get package name
         id: package
         run: echo "PACKAGE_NAME=$(jq -r .name package.json)" >> $GITHUB_OUTPUT
-
-      # - name: Determine if pre-release
-      #   id: prerelease
-      #   run: |
-      #     if [[ "${{ steps.changelog.outputs.version }}" == *-* ]]; then
-      #       echo "IS_PRERELEASE=true" >> $GITHUB_OUTPUT
-      #     else
-      #       echo "IS_PRERELEASE=false" >> $GITHUB_OUTPUT
-      #     fi
 
       - name: Publish to npm
         run: |
