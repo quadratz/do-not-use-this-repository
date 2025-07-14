@@ -59,18 +59,18 @@ jobs:
         id: package
         run: echo "PACKAGE_NAME=$(jq -r .name package.json)" >> $GITHUB_OUTPUT
 
-      - name: Determine if pre-release
-        id: prerelease
-        run: |
-          if [[ "${{ steps.changelog.outputs.version }}" == *-* ]]; then
-            echo "IS_PRERELEASE=true" >> $GITHUB_OUTPUT
-          else
-            echo "IS_PRERELEASE=false" >> $GITHUB_OUTPUT
-          fi
+      # - name: Determine if pre-release
+      #   id: prerelease
+      #   run: |
+      #     if [[ "${{ steps.changelog.outputs.version }}" == *-* ]]; then
+      #       echo "IS_PRERELEASE=true" >> $GITHUB_OUTPUT
+      #     else
+      #       echo "IS_PRERELEASE=false" >> $GITHUB_OUTPUT
+      #     fi
 
       - name: Publish to npm
         run: |
-          if [ "${{ steps.prerelease.outputs.IS_PRERELEASE }}" == "true" ]; then
+          if [ "${{ steps.changelog.outputs.IS_PRERELEASE }}" == "true" ]; then
             npm publish --tag next
           else
             npm publish
@@ -82,21 +82,21 @@ jobs:
         run: npx jsr publish
 
       - name: Set newest tag
-        run: npm dist-tag add ${{ steps.package.outputs.PACKAGE_NAME }}@${{ steps.changelog.outputs.version }} newest
+        run: npm dist-tag add ${{ steps.package.outputs.PACKAGE_NAME }}@${{ steps.changelog.outputs.VERSION }} newest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create GitHub Tag
         run: |
-          git tag v${{ steps.changelog.outputs.version }}
-          git push origin v${{ steps.changelog.outputs.version }}
+          git tag v${{ steps.changelog.outputs.VERSION }}
+          git push origin v${{ steps.changelog.outputs.VERSION }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ steps.changelog.outputs.version }}
-          name: v${{ steps.changelog.outputs.version }}
-          body: ${{ steps.changelog.outputs.content }}
-          prerelease: ${{ steps.prerelease.outputs.IS_PRERELEASE }}
+          tag_name: v${{ steps.changelog.outputs.VERSION }}
+          name: v${{ steps.changelog.outputs.VERSION }}
+          body: ${{ steps.changelog.outputs.CONTENT }}
+          prerelease: ${{ steps.changelog.outputs.IS_PRERELEASE }}
         # env:
         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

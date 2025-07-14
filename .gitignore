@@ -5,8 +5,8 @@ node_modules
 out
 dist
 *.tgz
-npm/**/*
-!npm/index.js
+src/**/*.js
+src/**/*.d.ts
 
 # code coverage
 coverage

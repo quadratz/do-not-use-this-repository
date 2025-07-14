@@ -1,5 +1,5 @@
 {
-	"include": ["src/**/*.ts"],
+	"include": ["./**/*.ts"],
 	"compilerOptions": {
 		"allowSyntheticDefaultImports": true,
 		"declaration": true,
@@ -12,7 +12,6 @@
 		"emitDeclarationOnly": true,
 		"forceConsistentCasingInFileNames": true,
 		"newLine": "lf",
-		"allowImportingTsExtensions": true,
-		"outDir": "npm"
+		"allowImportingTsExtensions": true
 	}
 }
