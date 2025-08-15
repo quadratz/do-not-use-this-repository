@@ -52,7 +52,7 @@
 		"@types/unist": "^3.0.3"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.1.1",
+		"@biomejs/biome": "2.2.0",
 		"@types/mdast": "^4.0.4",
 		"@types/node": "^24.0.13",
 		"mdast-util-from-markdown": "^2.0.2",
