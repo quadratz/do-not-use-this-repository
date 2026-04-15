@@ -1,12 +1,14 @@
 # telegram-html
 
-[![npm Badge](https://img.shields.io/npm/v/telegram-html?label=&color=050619&style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOCAyOCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9ImFsM2VyeHB6YnN5YXhjbjE3cnJmeWs1N2I2YTl5eW8iIGNsYXNzPSJjc3MtMW5pMmpzYSI+PHRpdGxlIGlkPSJhbDNlcnhwemJzeWF4Y24xN3JyZnlrNTdiNmE5eXlvIj5ucG08L3RpdGxlPjxwYXRoIGQ9Ik0yNS45NDMgMEgyLjA1N0MuOTIgMCAwIC45MiAwIDIuMDU3djIzLjg4NkMwIDI3LjA4LjkyIDI4IDIuMDU3IDI4aDIzLjg4NkMyNy4wOCAyOCAyOCAyNy4wOCAyOCAyNS45NDNWMi4wNTdDMjggLjkyIDI3LjA4IDAgMjUuOTQzIDB6IiBmaWxsPSIjQ0IwMDAwIj48L3BhdGg+PHBhdGggZD0iTTUuOTY0IDIyLjM2NWg4LjA4MmwuMDEtMTIuMTAzaDQuMDMxbC0uMDEgMTIuMTEzaDQuMDQxbC4wMS0xNi4xNDNMNS45ODUgNi4yMWwtLjAyMSAxNi4xNTR6IiBmaWxsPSIjZmZmIj48L3BhdGg+PC9zdmc+)](https://www.npmjs.com/package/telegram-html)
-![JSR Badge](https://img.shields.io/jsr/v/%40qz/do-not-use-this-package?style=for-the-badge&logo=jsr&logoColor=%23163c4c&logoSize=auto&label=&labelColor=%23ead527&color=%23163c4c&link=https%3A%2F%2Fjsr.io%2Fqz%2Ftelegram-html)
-[![GitHub Badge](https://img.shields.io/badge/Source-050619?style=for-the-badge&logo=github)](https://github.com/qz-project/telegram-html)
+![npm Version][npm-badge] ![JSR Version][jsr-badge] ![GitHub Release][github-badge]
 
 Convert [Telegram Bot API message][tg-msg] entity into HTML, or [hast][], and vice versa.
 
 ## Installation
+
+`telegram-html` is available on both [npm.com][npm] and [JSR.io][jsr].
+
+### Using npm
 
 ```bash
 # npm
@@ -20,6 +22,22 @@ bun add telegram-html
 
 # Deno
 deno add npm:telegram-html
+```
+
+### Using JSR
+
+```sh
+# npm - JSR
+npx jsr add @qz/telegram-html
+
+# pnpm - JSR
+pnpm i jsr:@qz/telegram-html
+
+# Bun - JSR
+bunx jsr add @qz/telegram-html
+
+# Deno - JSR
+deno add jsr:@qz/telegram-html
 ```
 
 ## Usage
@@ -269,7 +287,15 @@ Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for contribution guidelines.
 
 [MIT](./LICENSE)
 
+[github-badge]:
+  https://img.shields.io/github/v/release/qz-project/telegram-html?style=for-the-badge&logo=github&logoSize=auto&label=%20&labelColor=%23181717&color=%23edede6&link=https%3A%2F%2Fgithub.com%2Fqz-project%2Ftelegram-html%2Freleases
 [hast]: https://github.com/syntax-tree/hast
+[jsr]: https://jsr.io/@qz/telegram-html
+[jsr-badge]:
+  https://img.shields.io/jsr/v/%40qz/telegram-html?style=for-the-badge&logo=jsr&logoColor=%23163c4c&logoSize=auto&label=%20&labelColor=%23ead527&color=%23FAF6D1&link=https%3A%2F%2Fjsr.io%2Fqz%2Ftelegram-html
+[npm]: https://npmjs.com/package/telegram-html
+[npm-badge]:
+  https://img.shields.io/npm/v/telegram-html?style=for-the-badge&logo=npm&logoSize=auto&label=%20&labelColor=%23ce0000&color=%23FFE9E9&link=https%3A%2F%2Fnpmjs.com%2Fpackage%2Ftelegram-html
 [tg-msg]: https://core.telegram.org/bots/api#message
 [tg-entity]: https://core.telegram.org/bots/api#messageentity
 [unist-node]: https://github.com/syntax-tree/unist?tab=readme-ov-file#node
