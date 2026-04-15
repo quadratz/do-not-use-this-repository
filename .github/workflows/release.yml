@@ -24,9 +24,6 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: denoland/setup-deno@v2
-        with:
-          deno-version: v2.x
       - name: Install pnpm
         # Do not update to v6 until https://github.com/pnpm/action-setup/issues/225 is fixed
         # @anolilab/semantic-release-pnpm is not compatible to pnpm v11
