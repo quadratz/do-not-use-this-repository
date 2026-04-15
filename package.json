@@ -78,6 +78,7 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@anolilab/semantic-release-pnpm",
+      "@sebbo2002/semantic-release-jsr",
       "@semantic-release/github"
     ]
   }
